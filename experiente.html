@@ -39,43 +39,18 @@
       <p>Mesajul nu este publicat automat. Este citit înainte de publicare, iar datele personale care nu sunt necesare pot fi eliminate. Puteți alege dacă doriți să apăreți cu prenumele, cu inițialele sau anonim.</p>
     </div>
 
-    <form class="testimonial-form" id="testimonialForm">
-      <div class="form-grid">
-        <label>
-          <span>Nume sau prenume <em>opțional</em></span>
-          <input type="text" id="reviewName" name="name" maxlength="80" placeholder="Ex.: Maria">
-        </label>
-
-        <label>
-          <span>Cum doriți să fie afișat mesajul?</span>
-          <select id="displayName" name="display" required>
-            <option value="">Alegeți o variantă</option>
-            <option value="Prenume">Prenume</option>
-            <option value="Inițiale">Inițiale</option>
-            <option value="Anonim">Anonim</option>
-          </select>
-        </label>
-      </div>
-
-      <label>
-        <span>Experiența dumneavoastră</span>
-        <textarea id="reviewText" name="message" rows="9" maxlength="2500" required placeholder="Puteți scrie despre experiența consultației, tratamentului, intervenției sau recuperării."></textarea>
-      </label>
-
-      <div class="form-note">
-        Vă recomandăm să nu includeți CNP, adresă, număr de telefon, rezultate complete de analize sau alte date personale care nu sunt necesare.
-      </div>
-
-      <label class="consent-row">
-        <input type="checkbox" id="consent" required>
-        <span>Sunt de acord ca mesajul transmis să poată fi publicat pe site-ul Dr. Andrei Manu, integral sau într-o formă prescurtată, conform opțiunii de afișare selectate. Înțeleg că publicarea nu este automată.</span>
-      </label>
-
-      <p class="testimonial-disclaimer">Experiențele prezentate sunt individuale și nu reprezintă o garanție privind rezultatul unui tratament sau al unei intervenții.</p>
-
-      <button class="btn primary" type="submit">Trimite experiența pe e-mail</button>
-      <p class="submit-help">La apăsarea butonului se va deschide aplicația de e-mail a dispozitivului, cu mesajul completat automat către <strong>andrei.manu@umfcd.ro</strong>.</p>
-    </form>
+    <div class="testimonial-form jotform-embed-wrap">
+      <iframe
+        id="JotFormIFrame-262556114561051"
+        title="Experiența dumneavoastră"
+        src="https://form.jotform.com/262556114561051"
+        frameborder="0"
+        style="width:100%;min-height:760px;border:0;"
+        scrolling="yes"
+        allow="geolocation; microphone; camera; fullscreen"
+      ></iframe>
+      <p class="submit-help">Formularul se completează direct aici. După apăsarea butonului „Trimite mesajul”, răspunsul este salvat pentru analiză și nu este publicat automat.</p>
+    </div>
   </div>
 </section>
 
@@ -88,23 +63,6 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-document.getElementById('testimonialForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById('reviewName').value.trim() || 'Nespecificat';
-  const display = document.getElementById('displayName').value;
-  const message = document.getElementById('reviewText').value.trim();
-  const consent = document.getElementById('consent').checked ? 'DA' : 'NU';
 
-  const subject = 'Experiență pacientă - site Dr. Andrei Manu';
-  const body =
-    'Nume / prenume: ' + name + '\n' +
-    'Afișare dorită: ' + display + '\n\n' +
-    'Mesaj:\n' + message + '\n\n' +
-    'Acord pentru publicare: ' + consent;
-
-  window.location.href = 'mailto:andrei.manu@umfcd.ro?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-});
-</script>
 </body>
 </html>
