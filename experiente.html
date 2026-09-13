@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Experiențele pacientelor | Dr. Andrei Manu</title>
+  <meta name="description" content="Împărtășiți experiența dumneavoastră legată de consultație, tratament sau recuperare. Mesajele sunt publicate doar cu acordul pacientei.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="monogram">AM</span><span>Dr. Andrei Manu</span></a>
+    <button class="mobile-toggle" aria-label="Deschide meniul">☰</button>
+    <div class="nav-links">
+      <a href="despre.html">Despre mine</a>
+      <a href="consultatii.html">Consultații</a>
+      <a href="chirurgie.html">Chirurgie minim invazivă</a>
+      <a href="endometrioza.html">Endometrioză</a>
+      <a href="resurse.html">Pentru paciente</a>
+      <a href="experiente.html">Experiențele pacientelor</a>
+      <a class="btn primary" href="consultatii.html">Programează o consultație</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Experiențele pacientelor</div>
+    <h1>Împărtășiți experiența dumneavoastră</h1>
+    <p class="hero-sub">Experiența dumneavoastră poate fi utilă și altor paciente. Dacă doriți, ne puteți spune câteva cuvinte despre consultație, tratament sau perioada de recuperare.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="content">
+    <div class="info-box testimonial-info">
+      <h3>Cum funcționează</h3>
+      <p>Mesajul nu este publicat automat. Este citit înainte de publicare, iar datele personale care nu sunt necesare pot fi eliminate. Puteți alege dacă doriți să apăreți cu prenumele, cu inițialele sau anonim.</p>
+    </div>
+
+    <form class="testimonial-form" id="testimonialForm">
+      <div class="form-grid">
+        <label>
+          <span>Nume sau prenume <em>opțional</em></span>
+          <input type="text" id="reviewName" name="name" maxlength="80" placeholder="Ex.: Maria">
+        </label>
+
+        <label>
+          <span>Cum doriți să fie afișat mesajul?</span>
+          <select id="displayName" name="display" required>
+            <option value="">Alegeți o variantă</option>
+            <option value="Prenume">Prenume</option>
+            <option value="Inițiale">Inițiale</option>
+            <option value="Anonim">Anonim</option>
+          </select>
+        </label>
+      </div>
+
+      <label>
+        <span>Experiența dumneavoastră</span>
+        <textarea id="reviewText" name="message" rows="9" maxlength="2500" required placeholder="Puteți scrie despre experiența consultației, tratamentului, intervenției sau recuperării."></textarea>
+      </label>
+
+      <div class="form-note">
+        Vă recomandăm să nu includeți CNP, adresă, număr de telefon, rezultate complete de analize sau alte date personale care nu sunt necesare.
+      </div>
+
+      <label class="consent-row">
+        <input type="checkbox" id="consent" required>
+        <span>Sunt de acord ca mesajul transmis să poată fi publicat pe site-ul Dr. Andrei Manu, integral sau într-o formă prescurtată, conform opțiunii de afișare selectate. Înțeleg că publicarea nu este automată.</span>
+      </label>
+
+      <p class="testimonial-disclaimer">Experiențele prezentate sunt individuale și nu reprezintă o garanție privind rezultatul unui tratament sau al unei intervenții.</p>
+
+      <button class="btn primary" type="submit">Trimite experiența pe e-mail</button>
+      <p class="submit-help">La apăsarea butonului se va deschide aplicația de e-mail a dispozitivului, cu mesajul completat automat către <strong>andrei.manu@umfcd.ro</strong>.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><div class="brand"><span class="monogram">AM</span><span>Dr. Andrei Manu</span></div><p><small>Medic Specialist Obstetrică-Ginecologie · Asistent Universitar · Doctorand</small></p></div>
+    <div><strong>Navigare</strong><p><small><a href="despre.html">Despre mine</a><br><a href="consultatii.html">Consultații</a><br><a href="resurse.html">Pentru paciente</a><br><a href="experiente.html">Experiențele pacientelor</a></small></p></div>
+    <div><strong>Notă medicală</strong><p><small>Informațiile au scop educațional și nu înlocuiesc consultația sau recomandările individualizate.</small></p></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+document.getElementById('testimonialForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('reviewName').value.trim() || 'Nespecificat';
+  const display = document.getElementById('displayName').value;
+  const message = document.getElementById('reviewText').value.trim();
+  const consent = document.getElementById('consent').checked ? 'DA' : 'NU';
+
+  const subject = 'Experiență pacientă - site Dr. Andrei Manu';
+  const body =
+    'Nume / prenume: ' + name + '\n' +
+    'Afișare dorită: ' + display + '\n\n' +
+    'Mesaj:\n' + message + '\n\n' +
+    'Acord pentru publicare: ' + consent;
+
+  window.location.href = 'mailto:andrei.manu@umfcd.ro?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
