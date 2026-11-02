@@ -89,4 +89,3 @@
 .faq-item[open] summary::after{content:"−"}
 .faq-item summary:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
 .faq-item p{padding:0 24px 22px;margin:0;color:var(--muted)}
-.content a:not(.btn){text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(122,47,70,.3)}
