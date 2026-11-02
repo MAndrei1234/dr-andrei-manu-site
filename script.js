@@ -17,3 +17,5 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   }
 });
+/* Întrebări frecvente, afișate în ghidurile medicale */
+(()=>{const el=document.createElement('script');el.src='faq.js';document.head.appendChild(el);})();
