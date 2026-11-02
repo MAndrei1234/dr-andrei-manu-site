@@ -78,3 +78,15 @@
 .news-preview-card .card-link{margin-top:auto;padding-top:22px;color:var(--teal);font-weight:700;font-size:14px}
 .news-all-link{margin-top:28px}
 @media(max-width:700px){.site-news-heading{display:block}.site-news-heading .btn{margin-top:22px}.updates-timeline:before{left:6px}.update-entry{grid-template-columns:14px 1fr;gap:14px;padding-bottom:22px}.update-date{grid-column:2;text-align:left;padding:0 0 2px;font-size:12px}.update-dot{grid-column:1;grid-row:1 / span 2;margin-top:4px;width:13px;height:13px}.update-card{grid-column:2;padding:21px}.update-card h3{font-size:22px}}
+
+/* FAQ pentru ghiduri dedicate pacientelor */
+.faq-list{display:grid;gap:12px;margin:24px 0 38px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .2s ease}
+.faq-item[open]{border-color:rgba(142,59,85,.42)}
+.faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;padding:20px 24px;list-style:none;font-weight:700;color:#263247}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font:700 26px/1 'DM Sans',sans-serif;color:var(--teal);flex:0 0 auto}
+.faq-item[open] summary::after{content:"−"}
+.faq-item summary:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.faq-item p{padding:0 24px 22px;margin:0;color:var(--muted)}
+.content a:not(.btn){text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(122,47,70,.3)}
